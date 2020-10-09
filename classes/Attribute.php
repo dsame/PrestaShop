@@ -1,6 +1,7 @@
 <?php
 class AttributeCore extends ObjectModel
 {
+	/*
     public $id_attribute_group;
     public $name;
     public $color;
@@ -16,7 +17,6 @@ class AttributeCore extends ObjectModel
             'color' => ['type' => self::TYPE_STRING, 'validate' => 'isColor'],
             'position' => ['type' => self::TYPE_INT, 'validate' => 'isInt'],
 
-            /* Lang fields */
             'name' => ['type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isGenericName', 'required' => true, 'size' => 128],
         ],
     ];
@@ -67,7 +67,6 @@ class AttributeCore extends ObjectModel
             // Delete associated restrictions on cart rules
             CartRule::cleanProductRuleIntegrity('attributes', $this->id);
 
-            /* Reinitializing position */
             $this->cleanPositions((int) $this->id_attribute_group);
         }
         $return = parent::delete();
@@ -78,9 +77,6 @@ class AttributeCore extends ObjectModel
         return $return;
     }
 
-    /**
-     * @see ObjectModel::update()
-     */
     public function update($nullValues = false)
     {
         $return = parent::update($nullValues);
@@ -272,4 +268,5 @@ class AttributeCore extends ObjectModel
 
         return (is_numeric($position)) ? $position : -1;
     }
+	 */
 }
