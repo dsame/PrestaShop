@@ -19,10 +19,7 @@ jobs:
       - name: Look for files
         run: |
           set -x
-          ls -la /home/runner/work/PrestaShop/
-          ls -la /home/runner/work/PrestaShop/PrestaShop
-          ls -la /home/runner/work/PrestaShop/PrestaShop/classes
-          ls -la /home/runner/work/PrestaShop/PrestaShop/classes/Attribute.php
+          php l.php
 
       - name: Run phpstan
         run: ./vendor/bin/phpstan analyse -c phpstan.neon.dist --error-format github
