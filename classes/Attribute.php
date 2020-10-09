@@ -1,7 +1,8 @@
 <?php
+echo "Hello"
+	/*
 class AttributeCore extends ObjectModel
 {
-	/*
     public $id_attribute_group;
     public $name;
     public $color;
@@ -268,5 +269,5 @@ class AttributeCore extends ObjectModel
 
         return (is_numeric($position)) ? $position : -1;
     }
-	 */
 }
+	 */
