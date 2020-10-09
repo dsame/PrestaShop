@@ -137,12 +137,7 @@ class PrestaShopAutoload
 
             // If requested class does not exist, load associated core class
             if (isset($this->index[$className]) && !$this->index[$className]['path']) {
-		    echo "====";
-		    echo "className = $className";
-		    echo "path = $path";
-		    $o=shell_exec("ls -l ".$classDir . $this->index[$className . 'Core']['path']);
-		    echo "LS: $o";
-                require_once $classDir . $this->index[$className . 'Core']['path'];
+                require $classDir . $this->index[$className . 'Core']['path'];
 
                 if ($this->index[$className . 'Core']['type'] != 'interface') {
                     eval($this->index[$className . 'Core']['type'] . ' ' . $className . ' extends ' . $className . 'Core {}');
