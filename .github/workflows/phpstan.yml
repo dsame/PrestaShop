@@ -16,5 +16,13 @@ jobs:
           fetch-depth: 0
       - run: composer install --prefer-dist
 
+      - name: Look for files
+        run: |
+          set -x
+          ls -la /home/runner/work/PrestaShop/
+          ls -la /home/runner/work/PrestaShop/PrestaShop
+          ls -la /home/runner/work/PrestaShop/PrestaShop/classes
+          ls -la /home/runner/work/PrestaShop/PrestaShop/classes/Attribute.php
+
       - name: Run phpstan
         run: ./vendor/bin/phpstan analyse -c phpstan.neon.dist --error-format github
